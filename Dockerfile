@@ -8,4 +8,4 @@ COPY maxmeter-test.py /src
 RUN chmod 0644 /etc/cron.d/crontab
 RUN chmod a+s /usr/sbin/cron
 RUN /usr/bin/crontab /etc/cron.d/crontab
-CMD ["tail", "-f", "/dev/null"]
+CMD ["cron", "-f"]
