@@ -10,4 +10,4 @@ RUN chmod 0644 /etc/cron.d/crontab
 RUN touch /var/run/crond.pid
 RUN chmod 744 /var/run/crond.pid
 RUN /usr/bin/crontab /etc/cron.d/crontab
-CMD ["bash"]
+CMD ["tail", "-f", "/dev/null"]
