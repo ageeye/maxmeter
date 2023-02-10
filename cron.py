@@ -11,8 +11,8 @@ def task_meter():
     # print(car1.getData())
     print(car1.post().content)
 
-print('Start cron')
-schedule.every().day.at('21:35').do(task_meter)
+print('Start cron: ', time.ctime(time.time()) )
+schedule.every().day.at('22:00').do(task_meter)
 
 while 1:
     schedule.run_pending()
