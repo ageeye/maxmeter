@@ -5,4 +5,4 @@ RUN apt-get update && apt-get -y install joe
 RUN pip install --no-cache-dir requests pytz schedule
 COPY maxmeter.py /src
 COPY cron.py /src
-CMD ["/src/cron.py"]
+CMD ["python", "/src/cron.py"]
