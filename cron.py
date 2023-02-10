@@ -11,7 +11,7 @@ def task_meter():
     # print(car1.getData())
     print(car1.post().content)
 
-schedule.every().day.at('19:00').do(task_meter)
+schedule.every().day.at('19:30').do(task_meter)
 while 1:
     schedule.run_pending()
     time.sleep(1)
