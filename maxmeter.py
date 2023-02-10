@@ -4,8 +4,6 @@ from datetime import datetime
 from pytz import timezone
 from json import dumps
 from requests import post
-from os import environ
-from random import randrange
 
 @dataclass
 class MaxMeter:
