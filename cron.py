@@ -11,10 +11,11 @@ def task_meter():
     metername = environ['APP_PREFIX'] + 'COUNT1'
     car1 = MaxMeter(assetnum, metername, str(randrange(150))) 
     # print(car1.getData())
+    print('Run task_meter: ', time.ctime(time.time()) )
     print(car1.post().content)
 
 print('Start cron: ', time.ctime(time.time()) )
-schedule.every().day.at('21:20').do(task_meter)
+schedule.every().day.at('21:30').do(task_meter)
 
 while 1:
     schedule.run_pending()
