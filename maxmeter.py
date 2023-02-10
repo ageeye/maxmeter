@@ -59,12 +59,3 @@ class MaxMeter:
     def post(self):
         cls = MaxMeter
         return post(cls.url, data=self.getData(), headers=self.getHeaders(), verify=(environ['APP_VERIFY']=='True')) 
-
-if __name__ == "__main__":
-    MaxMeter.position('EAGLEUK', 'WOKING')
-    MaxMeter.login(environ['APP_KEY'], environ['APP_URL'])
-    assetnum  = environ['APP_PREFIX'] + '1'
-    metername = environ['APP_PREFIX'] + 'COUNT1'
-    car1 = MaxMeter(assetnum, metername, str(randrange(150))) 
-    # print(car1.getData())
-    print(car1.post().content)
