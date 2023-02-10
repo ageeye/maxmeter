@@ -1,1 +1,1 @@
-0 1 * * * 1000720000 python3 /src/maxmeter-test.py > /proc/1/fd/1 2>/proc/1/fd/2
+30 7 * * * 1000720000 python3 /src/maxmeter-test.py > /proc/1/fd/1 2>/proc/1/fd/2
