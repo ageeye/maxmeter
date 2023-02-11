@@ -12,6 +12,7 @@ def task_meter():
         metername = environ['APP_PREFIX'] + 'COUNT' + id
         car = MaxMeter(assetnum, metername, str(randrange(150))) 
         # print(car.getData())
+        car.newreadingdate = datetime.now(timezone('Europe/Berlin')).replace(microsecond=0).isoformat()
         print('Run task_meter: ', time.ctime(time.time()) )
         print(car.post().content)
 
