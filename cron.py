@@ -7,15 +7,16 @@ import time
 def task_meter():
     MaxMeter.position('EAGLEUK', 'WOKING')
     MaxMeter.login(environ['APP_KEY'], environ['APP_URL'])
-    assetnum  = environ['APP_PREFIX'] + '1'
-    metername = environ['APP_PREFIX'] + 'COUNT1'
-    car1 = MaxMeter(assetnum, metername, str(randrange(150))) 
-    # print(car1.getData())
-    print('Run task_meter: ', time.ctime(time.time()) )
-    print(car1.post().content)
+    for id in ['1', '2', '3', '4', '5']:
+        assetnum  = environ['APP_PREFIX'] + id
+        metername = environ['APP_PREFIX'] + 'COUNT' + id
+        car = MaxMeter(assetnum, metername, str(randrange(150))) 
+        # print(car.getData())
+        print('Run task_meter: ', time.ctime(time.time()) )
+        print(car.post().content)
 
 print('Start cron: ', time.ctime(time.time()) )
-schedule.every().day.at('21:30').do(task_meter)
+schedule.every().day.at('10:30').do(task_meter)
 
 while 1:
     schedule.run_pending()
