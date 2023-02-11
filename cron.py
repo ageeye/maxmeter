@@ -2,6 +2,7 @@ from maxmeter import MaxMeter
 from os import environ
 from random import randrange
 from datetime import datetime
+from pytz import timezone
 import schedule
 import time
 
@@ -18,7 +19,7 @@ def task_meter():
         print(car.post().content)
 
 print('Start cron: ', time.ctime(time.time()) )
-schedule.every().day.at('13:00').do(task_meter)
+schedule.every().day.at('14:30').do(task_meter)
 
 while 1:
     schedule.run_pending()
