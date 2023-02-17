@@ -11,7 +11,7 @@ def task_meter():
     MaxMeter.login(environ['APP_KEY'], environ['APP_URL'])
     for id in ['1', '2', '3', '4', '5']:
         assetnum  = environ['APP_PREFIX'] + id
-        metername = environ['APP_PREFIX'] + 'COUNT' + id
+        metername = environ['APP_PREFIX']
         car = MaxMeter(assetnum, metername, str(randrange(150))) 
         # print(car.getData())
         car.newreadingdate = datetime.now(timezone('Europe/Berlin')).replace(microsecond=0).isoformat()
