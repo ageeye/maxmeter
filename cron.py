@@ -7,7 +7,7 @@ import schedule
 import time
 
 def task_meter():
-    MaxMeter.position('EAGLEUK', 'WOKING')
+    MaxMeter.position('EAGLEUK', 'BEDFORD')
     MaxMeter.login(environ['APP_KEY'], environ['APP_URL'])
     for id in ['1', '2', '3', '4', '5']:
         assetnum  = environ['APP_PREFIX'] + id
